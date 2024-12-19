@@ -1,0 +1,178 @@
+/* Основной контейнер */
+.mainwrapper {
+    position: absolute;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100%;
+    height: auto !important;
+    display: none;
+}
+
+/* Фон страницы */
+body {
+    background-image: url("../img/main.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Стиль блока с контентом */
+#block-1 {
+    background-size: cover;
+    height: 750px;
+}
+
+/* Меню */
+.text_menu {
+    color: white;
+}
+
+#menu {
+    padding-top: 7px;
+    display: grid; /* Используем grid */
+    justify-content: center;
+    grid-auto-flow: column; /* Элементы меню в строку */
+    gap: 10px; /* Расстояние между пунктами меню */
+}
+#menu a {
+    padding: 10px;
+    font: 17px Arial;
+    text-decoration: none;
+    color: #807e7e;
+}
+
+#menu a:hover {
+    color: #343434;
+    background-color: #F5F6FA;
+}
+
+/* Стиль шапки */
+.header_menu {
+    position: fixed;
+    top: 37px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 2.4em 0;
+    display: none;
+}
+
+/* Белый фон под шапкой */
+#white {
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+    opacity: 80%;
+}
+
+/* Стиль для заголовка */
+#header_block {
+    margin-right: 5px;
+    padding: 15px;
+    font: 25px Arial;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+/* Сетка для блоков с книгами */
+.book-grid {
+    margin: 0px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-rows: repeat(2, auto); /* 2 строки */
+    gap: 20px; /* Расстояние между элементами */
+    justify-content: center;
+}
+
+/* Стиль для каждой карточки книги */
+.book-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    margin: 0px 20px;
+    perspective: 1000px;
+    height: 300px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.card .front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .back {
+    background-color: #f5f5f5;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.book-item:hover .card {
+    transform: rotateY(180deg);
+}
+/* Картинка книги */
+.book-item img {
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* Название книги */
+.book-item p {
+    margin-top: 10px;
+    font: 15px Arial;
+    color: #807e7e;
+}
+
+/* Старые таблицы, которые нужно заменить на grid */
+table {
+    margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Адаптивная сетка для таблицы */
+    gap: 20px;
+}
+
+.cell {
+    display: grid; /* Заменили на grid */
+    grid-template-columns: 1fr; /* Столбцы по одному элементу */
+    text-align: center;
+}
+
+p {
+    font: 15px Arial;
+    color: #807e7e;
+}

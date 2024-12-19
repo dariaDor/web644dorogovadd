@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>Джоан Роулинг</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="Form_wisards.css" rel="stylesheet">
+  <script src="../client/Form_w.js" defer></script>
+</head>
+
+<body>
+<div class="body_centre">
+  <div id="white">
+    <div id="header_menu">
+      <div id="menu">
+        <a href="Main.html">О писателе</a>
+        <a href="Book.html">Книги</a>
+        <a href="News.html">Новости</a>
+        <a href="Form_wisards.html">Хочу стать волшебником!</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="block_1">
+    <div id="header_block">Пройти распределение !</div>
+    <div id="block_fon">
+      <div id="info">
+        <form id="surveyForm" action="http://localhost:3000/submit" method="POST">
+          <div class="form-group">
+            <label for="name">Введи своё имя:</label>
+            <input type="text" id="name" name="name">
+            <small id="nameError" style="color: red; display: none;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Введи дату рождения:</label>
+            <input type="date" id="age" name="age" required>
+            <div id="dobError" style="color: red; display: none;">Пожалуйста, введите корректную дату</div>
+          </div>
+
+          <div class="question">
+            <label>1. Что бы вы скорее выбрали?</label>
+            <div class="answers">
+              <label><input type="radio" name="question1[]" value="1"> Дружба</label><br>
+              <label><input type="radio" name="question1[]" value="2"> Отношения</label><br>
+              <label><input type="radio" name="question1[]" value="3"> Карьера</label><br>
+              <label><input type="radio" name="question1[]" value="4"> Репутация</label><br>
+            </div>
+            <div class="question-error" style="color: red; display: none;"></div>
+          </div>
+
+          <div class="question">
+            <label>2. Как вы поведете себя, если окажетесь в опасности?</label>
+            <div class="answers">
+              <label><input type="radio" name="question2[]" value="3"> Сначала нужно составить план действий</label><br>
+              <label><input type="radio" name="question2[]" value="2"> К чёрту план, бежим!!</label><br>
+              <label><input type="radio" name="question2[]" value="4"> Пожалуй, предоставлю решить проблему другим</label><br>
+              <label><input type="radio" name="question2[]" value="1"> С вероятностью 99,9%, я и являюсь организатором этой опасности</label><br>
+            </div>
+            <div class="question-error" style="color: red; display: none;"></div>
+          </div>
+
+          <div class="question">
+            <label>3. Какое из этих человеческих качеств ты считаешь самым редким?</label>
+            <div class="answers">
+              <label><input type="radio" name="question3[]" value="2"> Верность</label><br>
+              <label><input type="radio" name="question3[]" value="1"> Доброта</label><br>
+              <label><input type="radio" name="question3[]" value="4"> Уверенность в себе</label><br>
+              <label><input type="radio" name="question3[]" value="3"> Ответственность</label><br>
+            </div>
+            <div class="question-error" style="color: red; display: none;"></div>
+          </div>
+
+          <div class="question">
+            <label>4. Каким должен быть для вас идеальный подарок на день рождения?</label>
+            <div class="answers">
+              <label><input type="radio" name="question4[]" value="4"> Что-то ценное и дорогое. В материальном плане, конечно</label><br>
+              <label><input type="radio" name="question4[]" value="3"> Книга - бессомненно лучший подарок</label><br>
+              <label><input type="radio" name="question4[]" value="1"> Подарок, сделанный своими руками, лучше любых других</label><br>
+              <label><input type="radio" name="question4[]" value="2"> Можете приходить и без подарка. Главное ведь внимание, правда?</label><br>
+            </div>
+            <div class="question-error" style="color: red; display: none;"></div>
+          </div>
+
+
+          <div class="question">
+            <label>5. Что должен сделать человек, чтобы вам понравиться?</label>
+            <div class="answers">
+              <label><input type="radio" name="question5[]" value="1"> Ничего. Просто быть самим собой.</label><br>
+              <label><input type="radio" name="question5[]" value="3"> Ну не знаю. Сделать что-то хорошее.</label><br>
+              <label><input type="radio" name="question5[]" value="2"> Пусть подарит вкусняшку</label><br>
+              <label><input type="radio" name="question5[]" value="4"> Разыграть кого-нибудь. Вот это точно будет зрелище.</label><br>
+            </div>
+            <div class="question-error" style="color: red; display: none;"></div>
+          </div>
+
+          <button type="submit">Отправить</button>
+        </form>
+
+        <div class="thank-you">
+          <p id="thank_you_name">Поздравляю !</p>
+          <p>Наша распределяющая шляпа решила, что ты смело можешь присоединяться к столу</p>
+          <p id="otv_house"></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
